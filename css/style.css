@@ -6,36 +6,61 @@
     font-family: Arial, sans-serif;
 }
 
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
 body {
     line-height: 1.6;
     background-color: #f4f4f4;
 }
 
+.container {
+    flex: 1; /* Makes the container take the available space */
+}
+
 /* Header Section */
 header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     background-color: #333;
     padding: 1rem;
 }
 
-header nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
+.logo h1 {
+    color: white;
+    margin: 0;
 }
 
-header nav ul li {
+/* Menu Styles */
+.menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* Default to flex on larger screens */
+}
+
+.menu li {
     margin: 0 1rem;
 }
 
-header nav ul li a {
-    color: #fff;
+.menu a {
+    color: white;
     text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s ease;
 }
 
-header nav ul li a:hover {
-    color: #f0a500;
+/* Hamburger button */
+.hamburger {
+    display: none; /* Hide by default */
+    font-size: 1.5rem;
+    background: none;
+    color: white;
+    border: none;
+    cursor: pointer;
 }
 
 /* Hero Section */
@@ -47,7 +72,6 @@ header nav ul li a:hover {
     justify-content: center;
     text-align: center;
     color: #fff;
-    position: relative;
 }
 
 .hero-content h1 {
@@ -101,6 +125,7 @@ header nav ul li a:hover {
     padding: 4rem 1rem;
     background-color: #fff;
     text-align: center;
+    margin: 2rem 0; /* Add margin for spacing */
 }
 
 .learn h1 {
@@ -110,7 +135,7 @@ header nav ul li a:hover {
 }
 
 .course {
-    margin-bottom: 2rem;
+    margin-bottom: 2rem; /* Add spacing between courses */
 }
 
 .course h2 {
@@ -125,11 +150,23 @@ header nav ul li a:hover {
     margin: 0.5rem auto;
 }
 
+.course img {
+    width: 100%; /* Make images responsive */
+    max-width: 600px; /* Limit max width for larger screens */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px; /* Optional: Add rounded corners */
+}
+
+.course h3 {
+    margin-top: 1rem; /* Add space above course titles */
+}
+
 /* Result Section */
 .result {
     padding: 4rem 1rem;
     background-color: #f9f9f9;
     text-align: center;
+    margin: 2rem 0; /* Add margin for spacing */
 }
 
 .result h1 {
@@ -137,18 +174,17 @@ header nav ul li a:hover {
     margin-bottom: 2rem;
     color: #333;
 }
-.result table tr th{
-    background-color: #f0a500;
-    color: black;
-}
 
-/* Table Styles */
-table {
+.result table {
     width: 100%;
     max-width: 900px;
-    margin: 0 auto;
-    border-collapse: collapse;
-    text-align: left;
+    margin: 1rem auto; /* Centering the table */
+    border-collapse: collapse; /* Make borders collapse for a cleaner look */
+}
+
+.result table tr th {
+    background-color: #f0a500;
+    color: black;
 }
 
 th, td {
@@ -166,29 +202,15 @@ td {
     color: #333;
 }
 
-/* Add to your existing style.css */
-html, body {
-    height: 100%;
-    margin: 0;
-}
-
-body {
-    display: flex;
-    flex-direction: column;
-}
-
-.container {
-    flex: 1; /* Makes the container take the available space */
-}
-
 /* Footer Styles */
 footer {
-    background-color: #333; /* Change as needed */
-    color: white; /* Change as needed */
+    background-color: #333;
+    color: white;
     text-align: center;
     padding: 1rem 0; /* Add padding for a better look */
 }
 
+/* Image Container */
 .image-container {
     display: flex;
     justify-content: center;
@@ -202,98 +224,7 @@ footer {
     border-radius: 8px; /* Optional: Add rounded corners */
 }
 
-.learn {
-    margin: 2rem 0; /* Add margin for spacing */
-}
-
-.course {
-    margin-bottom: 2rem; /* Add spacing between courses */
-}
-
-.course img {
-    width: 100%; /* Make images responsive */
-    max-width: 600px; /* Limit max width for larger screens */
-    height: auto; /* Maintain aspect ratio */
-    border-radius: 8px; /* Optional: Add rounded corners */
-}
-
-.course h3 {
-    margin-top: 1rem; /* Add space above course titles */
-}
-
-/* List style for Course Structure */
-.learn ul {
-    list-style-type: disc;
-    padding-left: 20px;
-}
-
-.result {
-    margin: 2rem 0; /* Add margin for spacing */
-}
-
-.result table {
-    width: 100%;
-    border-collapse: collapse; /* Make borders collapse for a cleaner look */
-    margin: 1rem 0; /* Add spacing above and below the table */
-}
-
-.result th, .result td {
-    border: 1px solid #ddd; /* Light border for table cells */
-    padding: 0.8rem; /* Padding for table cells */
-    text-align: left; /* Align text to the left */
-}
-
-.result th {
-    background-color: #f4f4f4; /* Light gray background for headers */
-}
-
-/* Additional styles for better spacing */
-.result h3 {
-    margin-top: 2rem; /* Add space above subsections */
-}
-
-/* Basic styling for header */
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #333; /* Change as needed */
-    padding: 1rem;
-}
-
-.logo h1 {
-    color: white; /* Change as needed */
-    margin: 0;
-}
-
-/* Hide the menu by default on small screens */
-.menu {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex; /* Default to flex on larger screens */
-}
-
-.menu li {
-    margin: 0 1rem;
-}
-
-.menu a {
-    color: white; /* Change as needed */
-    text-decoration: none;
-}
-
-/* Hamburger button */
-.hamburger {
-    display: none; /* Hide by default */
-    font-size: 1.5rem; /* Size of the hamburger icon */
-    background: none;
-    color: white; /* Change as needed */
-    border: none;
-    cursor: pointer;
-}
-
-/* Styling for the result section container */
+/* Styling for result section container */
 .result-section {
     max-width: 1200px;
     margin: 0 auto; /* Centering the section */
@@ -339,10 +270,7 @@ header {
     .result-section p {
         font-size: 1em;
     }
-}
 
-/* Responsive Styles */
-@media (max-width: 768px) {
     .menu {
         display: none; /* Hide menu items initially on small screens */
         flex-direction: column; /* Stack items vertically */
@@ -366,12 +294,7 @@ header {
         margin: 0.5rem 0; /* Margin between items in the dropdown */
         text-align: center; /* Center-align text for dropdown items */
     }
-}
 
-
-
-/* Responsive Design - Tablets and Smaller */
-@media (max-width: 768px) {
     header nav ul {
         flex-direction: column;
     }
