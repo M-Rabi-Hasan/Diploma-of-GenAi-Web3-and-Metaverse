@@ -3,7 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    font-family: Calibri;
 }
 
 html, body {
@@ -11,11 +11,12 @@ html, body {
     margin: 0;
     display: flex;
     flex-direction: column;
+    /* overflow-x: hidden; */ /* Commented for testing purposes */
 }
 
 body {
-    line-height: 1.6;
-    background-color: #f4f4f4;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    overflow-y: auto;   /* Allow vertical scrolling */
 }
 
 .container {
@@ -66,7 +67,7 @@ header {
 /* Hero Section */
 .hero {
     background: url('../images/hero-bg.jpg') no-repeat center center/cover;
-    height: 100vh;
+    min-height: 100vh; /* Use min-height instead of height */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -163,10 +164,12 @@ header {
 
 /* Result Section */
 .result {
-    padding: 4rem 1rem;
+    padding: 4rem 2rem; /* Adjust padding to create space */
     background-color: #f9f9f9;
     text-align: center;
-    margin: 2rem 0; /* Add margin for spacing */
+    margin: 2rem auto; /* Centering the section */
+    max-width: 1200px; /* Limit max width */
+    width: 100%; /* Make sure it takes full width */
 }
 
 .result h1 {
@@ -220,22 +223,13 @@ footer {
 
 .image-container img {
     width: 30%; /* Adjust width as needed */
+    max-width: 100%; /* Prevent overflow */
     margin: 1rem; /* Add margin for spacing between images */
     border-radius: 8px; /* Optional: Add rounded corners */
 }
 
-/* Styling for result section container */
-.result-section {
-    max-width: 1200px;
-    margin: 0 auto; /* Centering the section */
-    padding: 40px 20px;
-    background-color: #f9f9f9; /* Light background for contrast */
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
 /* Styling for section headings */
-.result-section h2 {
+.result h2 {
     font-size: 2em;
     color: #333;
     text-align: center;
@@ -244,7 +238,7 @@ footer {
 }
 
 /* Paragraph styling for result details */
-.result-section p {
+.result p {
     font-size: 1.1em;
     line-height: 1.6;
     color: #555;
@@ -252,8 +246,8 @@ footer {
 }
 
 /* If you have images with your content */
-.result-section img {
-    max-width: 100%;
+.result img {
+    max-width: 100%; /* Make images responsive */
     height: auto;
     display: block;
     margin: 20px auto;
@@ -261,18 +255,21 @@ footer {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-
 /* Responsive Design */
 @media (max-width: 768px) {
-    .result-section h2 {
+
+    .result {
+        padding: 2rem 1rem; /* Adjust padding for smaller screens */
+    }
+
+    .result h2 {
         font-size: 1.5em;
     }
 
-    .result-section p {
+    .result p {
         font-size: 1em;
     }
 
-  
     .menu {
         display: none; /* Hide menu items initially on small screens */
         flex-direction: column; /* Stack items vertically */
@@ -316,7 +313,6 @@ footer {
     .cta-button {
         padding: 0.6rem 1.5rem;
     }
-    
 }
 
 /* Responsive Design - Mobile Phones */
@@ -333,7 +329,8 @@ footer {
         padding: 0.5rem 1.2rem;
         font-size: 0.9rem;
     }
-    .learn ul{
+
+    .learn ul {
         padding: 10px;
     }
 }
