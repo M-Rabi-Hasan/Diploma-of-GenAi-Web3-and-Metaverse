@@ -261,6 +261,7 @@ footer {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .result-section h2 {
@@ -271,6 +272,7 @@ footer {
         font-size: 1em;
     }
 
+  
     .menu {
         display: none; /* Hide menu items initially on small screens */
         flex-direction: column; /* Stack items vertically */
@@ -314,6 +316,7 @@ footer {
     .cta-button {
         padding: 0.6rem 1.5rem;
     }
+    
 }
 
 /* Responsive Design - Mobile Phones */
@@ -329,5 +332,8 @@ footer {
     .cta-button {
         padding: 0.5rem 1.2rem;
         font-size: 0.9rem;
+    }
+    .learn ul{
+        padding: 10px;
     }
 }
